@@ -1,0 +1,35 @@
+{
+    "data": [
+        {
+            "name": "KANAWUT TRAIPIPATTANAPONG (ธนพนธ์ สุขุมพันธนาสาร)",
+            "nickname": "GULF (กลัฟ)",
+            "main-photo": "../assets/mewgulf/gulf-info-img.JPG",
+            "Birthday": {
+                "en-lan": "Birthday",
+                "zn-lan": "生日",
+                "value": "1997.12.04"
+            },
+            "BloodType": {
+                "en-lan": "Blood Type",
+                "zn-lan": "血型",
+                "value": "A"
+            },
+            "Height": {
+                "en-lan": "Height",
+                "zn-lan": "身高",
+                "value": "185cm"
+            },
+            "Weight": {
+                "en-lan": "Weight",
+                "zn-lan": "体重",
+                "value": "70kg"
+            },
+            "Education": {
+                "en-lan": "Education",
+                "zn-lan": "学历",
+                "value": "Faculty of Industrial Education and Technology King Mongkut's University of TechnologyThonburi",
+                "zn-value": "泰国国王科技大学教育传播与技术学系"
+            }
+        }
+    ]
+}
