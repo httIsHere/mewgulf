@@ -26,15 +26,26 @@
       <!-- head banner -->
       <Row class="part-banner"></Row>
       <!-- introduction and work -->
-      <Row class="introduction"></Row>
+      <div class="introduction">
+        <Row class="introdution__brief-info"></Row>
+        <Row class="introduction__detail-info">
+          <person-info />
+        </Row>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+// @ is an alias to /src
+import PersonInfo from '@/components/personInfo.vue'
+
 export default {
-  name: "Home"
-};
+  name: 'Home',
+  components: {
+    PersonInfo
+  }
+}
 </script>
 <style lang="less" scoped>
 .site-logo {

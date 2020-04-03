@@ -4,7 +4,10 @@ import router from './router'
 import ViewUI from 'view-design';
 import locale from 'view-design/dist/locale/en-US';
 import "./theme/index.less";
-// import 'view-design/dist/styles/iview.css';
+import axios from "axios";
+
+
+Vue.prototype.$axios = axios;
 
 Vue.config.productionTip = false
 
