@@ -38,7 +38,7 @@
 
 <script>
 // @ is an alias to /src
-import PersonInfo from '@/components/personInfo.vue'
+import PersonInfo from '@/components/PersonInfo.vue'
 
 export default {
   name: 'Home',
