@@ -1,37 +1,7 @@
 <template>
   <div class="container container-home">
     <div class="container-inner">
-      <!-- header -->
-      <Row class="part-nav">
-        <Col class="site-logo" span="12">
-          <div class="logo-inner">MewGulf</div>
-        </Col>
-        <Col class="site-nav" span="12">
-          <Menu mode="horizontal" :theme="theme1" active-name="1">
-            <MenuItem name="1">
-              <Icon type="md-people" />
-              双人介绍
-            </MenuItem>
-            <MenuItem name="2">
-              <Icon type="md-alarm" />
-              时间线
-            </MenuItem>
-            <MenuItem name="4">
-              <Icon type="ios-planet-outline" />
-              QQ Love
-            </MenuItem>
-          </Menu>
-        </Col>
-      </Row>
-      <!-- head banner -->
-      <Row class="part-banner"></Row>
-      <!-- introduction and work -->
-      <div class="introduction">
-        <Row class="introdution__brief-info"></Row>
-        <Row class="introduction__detail-info">
-          <person-info />
-        </Row>
-      </div>
+      mewgulf
     </div>
   </div>
 </template>
