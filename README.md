@@ -1,5 +1,10 @@
 # mewgulf-website
 
+## Deploy
+```
+sh deploy.sh
+```
+
 ## Project setup
 ```
 yarn install

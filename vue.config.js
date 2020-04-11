@@ -1,3 +1,12 @@
+const path = require("path");
+const px2rem = require("postcss-px2rem");
+
+const postcss = px2rem({
+  remUnit: 192, //基准大小 baseSize，需要和rem.js中相同
+  remPrecision: 8,
+  selectorBlackList: ["ivu-"],
+});
+
 module.exports = {
   /** 区分打包环境与开发环境
    * process.env.NODE_ENV==='production'  (打包环境)
@@ -31,9 +40,12 @@ module.exports = {
     // sourceMap: false, // pass custom options to pre-processor loaders. e.g. to pass options to // sass-loader, use { sass: { ... } }
     loaderOptions: {
       less: {
-        javascriptEnabled: true
-      }
-    } // Enable CSS modules for all css / pre-processor files. // This option does not affect *.vue files.
+        javascriptEnabled: true,
+      },
+      postcss: {
+        plugins: [postcss],
+      },
+    }, // Enable CSS modules for all css / pre-processor files. // This option does not affect *.vue files.
     // modules: false
   }, // use thread-loader for babel & TS in production build // enabled by default if the machine has more than 1 cores
 
@@ -52,6 +64,9 @@ module.exports = {
   }, // 第三方插件配置
 
   pluginOptions: {
-    // ...
-  }
+    "style-resources-loader": {
+      preProcessor: "less",
+      patterns: ["E:\\mewgulf\\mewgulf-website\\src\\theme\\global.less"],
+    },
+  },
 };

@@ -1,69 +1,50 @@
 <template>
   <div class="container container-home">
     <div class="container-inner">
-      <!-- header -->
-      <Row class="part-nav">
-        <Col class="site-logo" span="12">
-          <div class="logo-inner">MewGulf</div>
-        </Col>
-        <Col class="site-nav" span="12">
-          <Menu mode="horizontal" :theme="theme1" active-name="1">
-            <MenuItem name="1">
-              <Icon type="md-people" />
-              双人介绍
-            </MenuItem>
-            <MenuItem name="2">
-              <Icon type="md-alarm" />
-              时间线
-            </MenuItem>
-            <MenuItem name="4">
-              <Icon type="ios-planet-outline" />
-              QQ Love
-            </MenuItem>
-          </Menu>
-        </Col>
-      </Row>
-      <!-- head banner -->
-      <Row class="part-banner"></Row>
-      <!-- introduction and work -->
-      <div class="introduction">
-        <Row class="introdution__brief-info"></Row>
-        <Row class="introduction__detail-info">
-          <person-info />
-        </Row>
-      </div>
+      <title-bar />
+      <index-banner />
+      <person-info />
+      <wedding />
+      <time-line />
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import PersonInfo from '@/components/PersonInfo.vue'
+import TitleBar from "@/components/TitleBar";
+import IndexBanner from "@/components/IndexBanner";
+import PersonInfo from "@/components/PersonInfo.vue";
+import Wedding from "@/components/Wedding";
+import TimeLine from "@/components/TimeLine";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    PersonInfo
+    TitleBar,
+    IndexBanner,
+    PersonInfo,
+    Wedding,
+    TimeLine
   }
-}
+};
 </script>
-<style lang="less" scoped>
-.site-logo {
-  height: 60px;
-  padding-left: 60px;
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: #dcdee2;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+<style lang="less">
+.view-component-part {
+  padding: 80px 370px;
+  &-title {
+    font-size: 36px;
+    border-left: 5px solid @primary-color;
+    padding: 0 10px;
+    // background: linear-gradient(90deg, @primary-color 10%, #ffffff 90%);
+    // display: inline-block;
+    // color: #ffffff;
+    line-height: 30px;
   }
-  .logo-inner {
-    line-height: 60px;
-    font-size: 48px;
+  &-sub-title {
+    padding: 20px 0 40px 0;
+    font-size: 18px;
+    color: #999999;
   }
 }
 </style>
