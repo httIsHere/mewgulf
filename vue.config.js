@@ -1,3 +1,9 @@
+const px2rem = require('postcss-px2rem')
+const path = require("path");
+
+const postcss = px2rem({
+  remUnit: 75   //基准大小 baseSize，需要和rem.js中相同
+})
 module.exports = {
   /** 区分打包环境与开发环境
    * process.env.NODE_ENV==='production'  (打包环境)
@@ -32,6 +38,11 @@ module.exports = {
     loaderOptions: {
       less: {
         javascriptEnabled: true
+      },
+      postcss: {
+        plugins: [
+          postcss
+        ]
       }
     } // Enable CSS modules for all css / pre-processor files. // This option does not affect *.vue files.
     // modules: false
@@ -52,6 +63,9 @@ module.exports = {
   }, // 第三方插件配置
 
   pluginOptions: {
-    // ...
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [path.resolve(__dirname, './src/theme/global.less')]
+    }
   }
 };

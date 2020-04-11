@@ -1,39 +1,27 @@
 <template>
   <div class="container container-home">
     <div class="container-inner">
-      mewgulf
+      <!-- 顶部导航条 -->
+      <title-bar />
+      <!-- index banner -->
+      <index-banner />
+      <person-info />
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import PersonInfo from '@/components/PersonInfo.vue'
+import TitleBar from "@/components/TitleBar.vue";
+import PersonInfo from "@/components/PersonInfo.vue";
+import IndexBanner from "@/components/IndexBanner.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    PersonInfo
+    PersonInfo,
+    TitleBar,
+    IndexBanner
   }
-}
+};
 </script>
-<style lang="less" scoped>
-.site-logo {
-  height: 60px;
-  padding-left: 60px;
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: #dcdee2;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  .logo-inner {
-    line-height: 60px;
-    font-size: 48px;
-  }
-}
-</style>
