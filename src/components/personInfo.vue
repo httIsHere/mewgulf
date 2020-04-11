@@ -9,7 +9,7 @@ export default {
         }
     },
     mounted() {
-        this.$axios.get('/info-card.json').then(res => {
+        this.$axios.get('../static/info-card.json').then(res => {
             console.log(res)
         })
     }
