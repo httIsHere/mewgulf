@@ -3,13 +3,16 @@ import router from './router'
 import ViewUI from 'view-design';
 import locale from 'view-design/dist/locale/en-US';
 import "./theme/index.less";
-import axios from "./servers/axios";
+import http from "./servers/axios";
 import store from './store';
 import App from './App.vue';
 import 'lib-flexible/flexible';
 
+// console.log(process.env)
+// process.env.BASE_URL = (process.env.NODE_ENV == 'production') ? '/mewgulf/' : '/';
 
-Vue.prototype.$axios = axios;
+http.init();
+Vue.prototype.$axios = http;
 
 Vue.config.productionTip = false
 

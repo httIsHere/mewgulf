@@ -16,9 +16,11 @@
   font-family: Flamingo-54;
   src: url(./static/fonts/Flamingo-54.ttf);
 }
-body {
+body, pre {
   font-size: 24px;
   font-family: Omega-Sans;
+  padding: 0;
+  margin: 0;
 }
 li {
   list-style: none;
@@ -27,7 +29,7 @@ a , a:hover{
   color: unset;
 }
 .icon-pause {
-  background: url(/assets/wedding/media-pause.png);
+  background: url(http://assets-cdn.lanqb.com/eyuschool/index-video-item-media-pause.png);
   background-size: 100% 100%;
 }
 .created-from, .translate-support {
@@ -35,5 +37,21 @@ a , a:hover{
   .resources-link {
     text-decoration: underline;
   }
+}
+.ivu-timeline-item{
+  padding-bottom: 20px;
+}
+.ivu-timeline-item-tail{
+  border-width: 1px;
+  left: 10px;
+}
+.ivu-timeline-item-head{
+  width: 20px;
+  height: 20px;
+}
+.ivu-timeline-item-content{
+  padding: 5px 10px 10px 40px;
+  font-size: 20px;
+  top: -15px;
 }
 </style>

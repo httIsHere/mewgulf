@@ -3,7 +3,7 @@
     {
       "name": "Suppasit Jongcheveevat (ศุภศิษฏ์ จงชีวีวัฒน์)",
       "nickname": "Mew (มิว)",
-      "main_photo": "../assets/mewgulf-info/mew-info-img.jpg",
+      "main_photo": "./img/mewgulf-info/mew-info-img.jpg",
       "detail": {
         "Birthday": {
           "en_lan": "Birthday",
@@ -71,7 +71,7 @@
           "en_lan": "Shoes Size",
           "zn_lan": "鞋码",
           "value": "42 (EUR)",
-          "zn_value": "42（欧码））"
+          "zn_value": "42（欧码）"
         },
         "Pet": {
           "en_lan": "Pet",
@@ -116,7 +116,7 @@
     {
       "name": "KANAWUT TRAIPIPATTANAPONG (ธนพนธ์ สุขุมพันธนาสาร)",
       "nickname": "GULF (กลัฟ)",
-      "main_photo": "../assets/mewgulf-info/gulf-info-img.JPG",
+      "main_photo": "./img/mewgulf-info/gulf-info-img.JPG",
       "detail": {
         "Birthday": {
           "en_lan": "Birthday",

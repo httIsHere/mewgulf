@@ -42,6 +42,7 @@
   </div>
 </template>
 <script>
+import http from "@/servers/axios";
 export default {
   data() {
     return {
@@ -50,7 +51,7 @@ export default {
   },
   mounted() {
     const _this = this;
-    this.$axios.get("/api/info-card.json").then(res => {
+    http.get("/info-card.json").then(res => {
       if (res.status == 200) {
         _this.person_info = res.data.data;
       }
@@ -72,7 +73,7 @@ export default {
     justify-content: space-between;
     background: #f3f3f3;
     cursor: pointer;
-    transition: 0.2s all ease-in-out;
+    transition: 0.5s all ease-in-out;
     &-reverse {
       flex-direction: row-reverse;
     }

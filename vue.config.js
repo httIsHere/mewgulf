@@ -6,7 +6,6 @@ const postcss = px2rem({
   remPrecision: 8,
   selectorBlackList: ["ivu-"],
 });
-
 module.exports = {
   /** 区分打包环境与开发环境
    * process.env.NODE_ENV==='production'  (打包环境)
@@ -20,10 +19,12 @@ module.exports = {
   // 指定子路径。比如将你的应用部署在
   // https://www.foobar.com/my-app/
   // 那么将这个值改为 '/my-app/'
-  // baseUrl: "/", // 构建好的文件输出到哪里
-  publicPath: process.env.NODE_ENV === "production" ? "/mewgulf/" : "/",
+  // baseUrl: process.env.NODE_ENV == 'production' ? "/mewgulf/" : "/", // 构建好的文件输出到哪里
+  publicPath: process.env.NODE_ENV == 'production' ? "/mewgulf/" : "/",
+  // publicPath: "/mewgulf/",
 
   outputDir: "docs", // where to put static assets (js/css/img/font/...) // 是否在保存时使用‘eslint-loader’进行检查 // 有效值: true | false | 'error' // 当设置为‘error’时，检查出的错误会触发编译失败
+  // assetsDir:' ',
   lintOnSave: false, // 使用带有浏览器内编译器的完整构建版本 // https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only
   runtimeCompiler: false, // babel-loader默认会跳过`node_modules`依赖. // 通过这个选项可以显示转译一个依赖
   transpileDependencies: [

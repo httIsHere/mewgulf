@@ -1,5 +1,5 @@
 <template>
-  <div class="view-component view-component-part view-component__wedding" id="Wedding">
+  <div class="view-component view-component-part view-component-part-gray view-component__wedding" id="Wedding">
     <p class="view-component-part-title">婚礼🐼❤️⚽️</p>
     <p class="view-component-part-sub-title">我不允许有人没看过这个！
       <span class="created-from">©️ YouTuBe @MewGulf FanMeeting</span>
@@ -13,8 +13,8 @@
         <video
           id="wedding__video"
           class="wedding__video"
-          src="/assets/wedding/MewGulfFM2020.mp4"
-          poster="/assets/wedding/wedding-poster_0.jpg"
+          :src="wedding_obj.wedding_video"
+          :poster="wedding_obj.wedding_poster"
           :controls="video_play"
         ></video>
       </div>
@@ -30,7 +30,11 @@ export default {
   data() {
     return {
       video_play: false,
-      wedding_translate: null
+      wedding_translate: null,
+      wedding_obj: {
+        wedding_video: '',
+        wedding_poster: ''
+      }
     };
   },
   mounted() {
@@ -44,7 +48,10 @@ export default {
     },
     getWeddingTranslate() {
       const _this = this;
-      _this.$axios.get("/api/wedding-translate.json").then(res => {
+      _this.$axios.get('wedding-video.json').then(res => {
+        _this.wedding_obj = res.data;
+      })
+      _this.$axios.get("/wedding-translate.json").then(res => {
         _this.wedding_translate = res.data;
       });
     }

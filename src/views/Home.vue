@@ -32,6 +32,9 @@ export default {
 <style lang="less">
 .view-component-part {
   padding: 80px 370px;
+  &-gray {
+    background: @bg-color;
+  }
   &-title {
     font-size: 36px;
     border-left: 5px solid @primary-color;
@@ -46,5 +49,8 @@ export default {
     font-size: 18px;
     color: #999999;
   }
+}
+.yellow-card {
+  background: @card-color2;
 }
 </style>

@@ -27,8 +27,7 @@ const http = {
 
     init() {
         axios.defaults.timeout = 20000;
-        axios.defaults.baseURL = '/api'
-
+        axios.defaults.baseURL = process.env.BASE_URL + 'api'
         // Intercept the request to make sure the token is injected into the header.
         axios.interceptors.request.use(config => {
             if (config.method == 'get') {
