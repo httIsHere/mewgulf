@@ -1,6 +1,11 @@
 <template>
-  <div class="view-component view-component__timeline-item" :class="yellow?'yellow-card':''">
-    <div class="timeline-item__content"><pre>{{content}}</pre></div>
+  <div
+    class="view-component view-component__timeline-item"
+    :class="yellow ? 'yellow-card' : ''"
+  >
+    <div class="timeline-item__content">
+      <pre>{{ content }}</pre>
+    </div>
     <div class="timeline-item__cover">
       <img v-if="cover" :src="cover" class="timeline-item__cover-img" />
     </div>
@@ -19,6 +24,7 @@ export default {
   display: flex;
   justify-content: space-between;
   position: relative;
+  width: 500px;
   &::before {
     content: "";
     width: 0;
@@ -31,12 +37,13 @@ export default {
     left: -20px;
   }
   &.yellow-card {
+    background: @card-color2;
     &::before {
       border-color: transparent @card-color2 transparent transparent;
     }
   }
   pre {
-      font-size: 20px;
+    font-size: 20px;
   }
   .timeline-item__cover {
     width: 80px;

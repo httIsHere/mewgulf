@@ -67,7 +67,7 @@ module.exports = {
   pluginOptions: {
     "style-resources-loader": {
       preProcessor: "less",
-      patterns: ["E:\\mewgulf\\mewgulf-website\\src\\theme\\global.less"],
+      patterns: ["./src/theme/global.less"],
     },
   },
 };
