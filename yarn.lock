@@ -5734,7 +5734,7 @@ punycode@^2.1.0, punycode@^2.1.1:
   version "2.1.1"
   resolved "https://registry.npm.taobao.org/punycode/download/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
 
-px2rem@~0.5.0:
+px2rem@^0.5.0, px2rem@~0.5.0:
   version "0.5.0"
   resolved "https://registry.npm.taobao.org/px2rem/download/px2rem-0.5.0.tgz#24b3a6cf74d14adb4ed776f207871d9893e410e2"
   integrity sha1-JLOmz3TRSttO13byB4cdmJPkEOI=

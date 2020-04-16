@@ -1,42 +1,54 @@
 <template>
-  <div class="view-component view-component-part view-component__person-info" id="Introduction">
-    <p class="view-component-part-title">资料卡</p>
-    <p class="view-component-part-sub-title">© 哥弟工作室，最新更新至03.05（不完整整理）</p>
-    <div
-      class="person-info__card"
-      :class="card_index%2==0?'person-info__card-reverse':''"
-      v-for="(item, card_index) in person_info"
-      :key="item.name"
-    >
-      <div class="person-info__card-left">
-        <img :src="item.main_photo" class="person-info__card-left-cover" />
-      </div>
-      <div class="person-info__card-right">
-        <p class="card__nickname">
-          {{item.nickname}}
-          <span class="card__nickname-underline"></span>
-        </p>
-        <p class="card__name">{{item.name}}</p>
-        <ul class="card__detail-list">
-          <li
-            class="card__detail-list-item"
-            v-for="(detail_item, index) in item.detail"
-            :key="index"
-          >
-            <span class="card__detail-list-item-label">{{detail_item.zn_lan}}：</span>
-            <span
-              class="card__detail-list-item-content"
-              v-if="detail_item.en_lan != 'Filmography'"
-            >{{detail_item.zn_value || detail_item.value}}</span>
-            <ul class="card__detail-list-item-content" v-else>
-              <li
-                class="card__detail-list-item-content-item"
-                v-for="(film, i) in (detail_item.zn_value || detail_item.value)"
-                :key="i"
-              >{{film}}</li>
-            </ul>
-          </li>
-        </ul>
+  <div
+    class="view-component view-component-part view-component__person-info"
+    id="Introduction"
+  >
+    <div class="view-component-part-inner">
+      <p class="view-component-part-title">资料卡</p>
+      <p class="view-component-part-sub-title">
+        © 哥弟工作室，最新更新至03.05（不完整整理）
+      </p>
+      <div
+        class="person-info__card"
+        :class="card_index % 2 == 0 ? 'person-info__card-reverse' : ''"
+        v-for="(item, card_index) in person_info"
+        :key="item.name"
+      >
+        <div class="person-info__card-left">
+          <img :src="item.main_photo" class="person-info__card-left-cover" />
+        </div>
+        <div class="person-info__card-right">
+          <p class="card__nickname">
+            {{ item.nickname }}
+            <span class="card__nickname-underline"></span>
+          </p>
+          <p class="card__name">{{ item.name }}</p>
+          <ul class="card__detail-list">
+            <li
+              class="card__detail-list-item"
+              v-for="(detail_item, index) in item.detail"
+              :key="index"
+            >
+              <span class="card__detail-list-item-label"
+                >{{ detail_item.zn_lan }}：</span
+              >
+              <span
+                class="card__detail-list-item-content"
+                v-if="detail_item.en_lan != 'Filmography'"
+                >{{ detail_item.zn_value || detail_item.value }}</span
+              >
+              <ul class="card__detail-list-item-content" v-else>
+                <li
+                  class="card__detail-list-item-content-item"
+                  v-for="(film, i) in detail_item.zn_value || detail_item.value"
+                  :key="i"
+                >
+                  {{ film }}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -46,17 +58,17 @@ import http from "@/servers/axios";
 export default {
   data() {
     return {
-      person_info: []
+      person_info: [],
     };
   },
   mounted() {
     const _this = this;
-    http.get("/info-card.json").then(res => {
+    http.get("/info-card.json").then((res) => {
       if (res.status == 200) {
         _this.person_info = res.data.data;
       }
     });
-  }
+  },
 };
 </script>
 <style lang="less" scoped>

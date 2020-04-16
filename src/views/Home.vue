@@ -25,29 +25,40 @@ export default {
     IndexBanner,
     PersonInfo,
     Wedding,
-    TimeLine
-  }
+    TimeLine,
+  },
 };
 </script>
 <style lang="less">
 .view-component-part {
-  padding: 80px 370px;
+  padding: 80px 0;
+  &-inner {
+    width: 1820px;
+    margin: 0 auto;
+  }
   &-gray {
     background: @bg-color;
   }
   &-title {
     font-size: 36px;
-    border-left: 5px solid @primary-color;
-    padding: 0 10px;
+    border-bottom: 5px solid @primary-color;
+    // padding: 0 10px;
     // background: linear-gradient(90deg, @primary-color 10%, #ffffff 90%);
     // display: inline-block;
     // color: #ffffff;
-    line-height: 30px;
+    // line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
   &-sub-title {
     padding: 20px 0 40px 0;
-    font-size: 18px;
+    font-size: 22px;
     color: #999999;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
   }
 }
 .yellow-card {

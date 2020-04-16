@@ -1,5 +1,5 @@
 <template>
-  <div class="view-component view-component__title-bar" id="title-bar">
+  <div :class="['view-component view-component__title-bar', black_bar ? 'view-component__title-bar-black' : '']" id="title-bar">
     <div class="view-component__inner">
       <span class="title-bar__logo gradient-text">MewGulf</span>
       <div class="title-bar__tabs">
@@ -51,7 +51,8 @@ export default {
           name: "资源汇总",
           id: "Resources"
         }
-      ]
+      ],
+      black_bar: false
     };
   },
   mounted() {
@@ -72,9 +73,9 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop;
       let title_bar_height = document
-        .getElementById("title-bar")
+        .getElementById("Home")
         .offsetHeight;
-      console.log(scrollTop, title_bar_height);
+      this.black_bar = scrollTop > title_bar_height;
     }
   },
   computed: {
@@ -91,6 +92,9 @@ export default {
   left: 0;
   right: 0;
   z-index: 100;
+  &-black {
+    background: rgba(0, 0, 0, 0.3);
+  }
   .view-component__inner {
     height: 100px;
     padding: 0 370px;
