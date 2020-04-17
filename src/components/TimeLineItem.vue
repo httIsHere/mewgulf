@@ -25,6 +25,10 @@ export default {
   justify-content: space-between;
   position: relative;
   width: 500px;
+  z-index: 1;
+  &:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .15);
+  }
   &::before {
     content: "";
     width: 0;
@@ -35,6 +39,7 @@ export default {
     position: absolute;
     top: 10px;
     left: -20px;
+    z-index: 2;
   }
   &.card-style-1 {
     background: @card-color2;

@@ -6,6 +6,7 @@
       <person-info />
       <wedding />
       <time-line />
+      <online-interaction />
     </div>
   </div>
 </template>
@@ -17,6 +18,7 @@ import IndexBanner from "@/components/IndexBanner";
 import PersonInfo from "@/components/PersonInfo.vue";
 import Wedding from "@/components/Wedding";
 import TimeLine from "@/components/TimeLine";
+import OnlineInteraction from "@/components/OnlineInteraction";
 
 export default {
   name: "Home",
@@ -26,6 +28,7 @@ export default {
     PersonInfo,
     Wedding,
     TimeLine,
+    OnlineInteraction
   },
 };
 </script>

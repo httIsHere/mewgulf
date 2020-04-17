@@ -140,6 +140,7 @@ export default {
     bottom: 0;
     text-align: center;
     font-size: 24px;
+    z-index: 10;
     &-text {
       cursor: pointer;
     }

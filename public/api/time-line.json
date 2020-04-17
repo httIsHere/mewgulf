@@ -276,6 +276,77 @@
         "month": "2020-01",
         "events": [
             {
+                "date": "2020-01-30",
+                "content": "KFC电竞活动",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ]
+            },
+            {
+                "date": "2020-01-28",
+                "content": "屈臣氏活动",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ]
+            },
+            {
+                "date": "2020-01-25",
+                "content": "外府活动 UD town",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ]
+            },
+            {
+                "date": "2020-01-24",
+                "content": "日历签售活动 #MewGulfFansign2020\nSosatseoulsay采访",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ]
+            },
+            {
+                "date": "2020-01-23",
+                "content": "寺庙采访",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ]
+            },
+            {
+                "date": "2020-01-21",
+                "content": "MewGulf 官宣CP粉名-WaanjaiMewGulf",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ],
+                "love": true
+            },
+            {
+                "date": "2020-01-20",
+                "content": "Mew给Gulf系腰带",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ]
+            },
+            {
+                "date": "2020-01-19",
+                "content": "Tharn Type Special EP 观影",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ]
+            },
+            {
+                "date": "2020-01-18",
+                "content": "HiraBlue面膜游轮活动 #HiraBlueMaskxMewGulf",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ]
+            },
+            {
+                "date": "2020-01-17",
+                "content": "Ep11 Reaction with James 73min 不要太甜哦！",
+                "imgs": [
+                    "./img/timeline/20200108/20200108_00.jpg"
+                ]
+            },
+            {
                 "date": "2020-01-15",
                 "content": "一起学习中文。",
                 "imgs": [
@@ -286,7 +357,7 @@
             },
             {
                 "date": "2020-01-08",
-                "content": "NewsPlus直播\nNineEntertain采访\nManpeuak采访\nKhaosod直播\nMaya采访\nEp11 Reaction with James",
+                "content": "NewsPlus直播\nNineEntertain采访\nManpeuak采访（巨甜）\nKhaosod直播\nMaya采访\nEp11 Reaction with James",
                 "imgs": [
                     "./img/timeline/20200108/20200108_00.jpg"
                 ]
