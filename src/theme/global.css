@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Omega-Sans";
+  src: url('~@/static/fonts/Omega-Sans.ttf');
+}
+@font-face {
+  font-family: Debby;
+  src: url('~@/static/fonts/Debby.ttf');
+}
+@font-face {
+  font-family: Flamingo-54;
+  src: url('~@/static/fonts/Flamingo-54.ttf');
+}
+body,
+pre {
+  font-size: 24px;
+  font-family: Omega-Sans;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+li {
+  list-style: none;
+}
+a,
+a:hover {
+  color: unset;
+}

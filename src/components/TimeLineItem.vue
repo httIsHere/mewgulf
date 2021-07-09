@@ -4,11 +4,12 @@
     :class="'card-style-' + index % 3"
   >
     <div :class="['timeline-item__content', cover ? 'timeline-item__content-with-cover' : '']">
-      <pre>{{ content }}</pre>
+      <pre v-html="content"></pre>
+      <!-- <p v-html="content"></p> -->
     </div>
-    <div class="timeline-item__cover" v-if="cover">
+    <!-- <div class="timeline-item__cover" v-if="cover">
       <img v-if="cover" :src="cover" class="timeline-item__cover-img" />
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -56,6 +57,7 @@ export default {
   .timeline-item__content {
   pre {
     font-size: 20px;
+    white-space: pre-line;
   }
     &-with-cover {
       width: calc(100% - 90px);

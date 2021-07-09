@@ -1,4 +1,4 @@
-const path = require("path");
+// const path = require("path");
 const px2rem = require("postcss-px2rem");
 
 const postcss = px2rem({
@@ -65,9 +65,9 @@ module.exports = {
   }, // 第三方插件配置
 
   pluginOptions: {
-    "style-resources-loader": {
-      preProcessor: "less",
-      patterns: ["./src/theme/global.less"],
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: ['./src/theme/global.less'],
     },
   },
 };

@@ -1,5 +1,13 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-04-22 00:31:12
+ * @LastEditTime: 2021-07-08 18:03:35
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /mewgulf/src/components/IndexBanner.vue
+-->
 <template>
-  <div class="view-component view-component__banner" id="Home">
+  <div class="view-component view-component__banner" id="HomeBanner">
     <div class="mask"></div>
       <img src="https://s1.ax1x.com/2020/04/12/GqNm4g.jpg" class="banner__main-img" />
     </div>
@@ -29,8 +37,8 @@ export default {
 </script>
 <style lang="less" scoped>
 .view-component__banner {
-  width: 100%;
-  height: 512px;
+  width: 100vw;
+  height: 26.667vw;
   position: relative;
   .mask {
     position: absolute;
@@ -48,7 +56,7 @@ export default {
   }
   .banner__main-img {
     width: 100%;
-    height: 512px;
+    height: 100%;
   }
 }
 </style>

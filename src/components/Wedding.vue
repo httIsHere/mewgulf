@@ -23,9 +23,8 @@
             :controls="video_play"
           ></video>
         </div>
-        <translate-card :content="wedding_translate" type="Q&A" />
         <p class="translate-support">
-          中字支持：@喜翻译制组 ->
+          中字版：@喜翻译制组 ->
           <a
             href="https://www.bilibili.com/video/BV1G7411p7gp"
             target="_blank"
@@ -33,6 +32,7 @@
             >【泰语中字】Mew&Gulf - 我们的“婚礼” 中字版@喜翻译制组</a
           >
         </p>
+        <translate-card :content="wedding_translate" type="Q&A" />
       </div>
     </div>
   </div>
@@ -126,6 +126,7 @@ export default {
       }
     }
     .translate-support {
+      text-align: center;
       padding: 10px 90px;
     }
   }

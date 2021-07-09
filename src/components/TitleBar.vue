@@ -1,61 +1,42 @@
 <template>
-  <div :class="['view-component view-component__title-bar', black_bar ? 'view-component__title-bar-black' : '']" id="title-bar">
-    <div class="view-component__inner">
-      <span class="title-bar__logo gradient-text">MewGulf</span>
-      <div class="title-bar__tabs">
-        <a
-          :href="`#${item.id}`"
-          :class="[
+  <transition name="fade-in-down">
+    <div
+      :class="['view-component view-component__title-bar', black_bar ? 'view-component__title-bar-black' : '']"
+      id="title-bar"
+      v-show="show_title"
+    >
+      <div class="view-component__inner">
+        <span class="title-bar__logo gradient-text">MewGulf</span>
+        <!-- <div class="title-bar__logo img"></div> -->
+        <div class="title-bar__tabs">
+          <a
+            href="javascript:;"
+            :class="[
             'title-bar__tabs-item',
             cur_tab == item.id ? 'title-bar__tabs-item-active' : ''
           ]"
-          v-for="item in tabs"
-          :key="item.id"
-          @click="triggerTab(item)"
-          >{{ item.name }}</a
-        >
+            v-for="item in tabs"
+            :key="item.id"
+            @click="triggerTab(item)"
+          >{{ item.name }}</a>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 <script>
+import Tabs from "@/store/nav";
 export default {
+  props: ['black'],
   data() {
     return {
-      tabs: [
-        {
-          name: "首页",
-          id: "Home"
-        },
-        {
-          name: "双人介绍",
-          id: "Introduction"
-        },
-        {
-          name: "婚礼",
-          id: "Wedding"
-        },
-        {
-          name: "时间线",
-          id: "Time-Line"
-        },
-        {
-          name: "网恋实录",
-          id: "QQ-Love"
-        },
-        {
-          name: "行程",
-          id: "Scheduling"
-        },
-        {
-          name: "资源汇总",
-          id: "Resources"
-        }
-      ],
-      black_bar: false
+      tabs: Tabs,
+      black_bar: this.black || false,
+      show_title: false
     };
   },
   mounted() {
+    this.show_title = true;
     const _this = this;
     // 监听页面滚动
     this.$nextTick(() => {
@@ -64,18 +45,24 @@ export default {
   },
   methods: {
     triggerTab(_tab) {
+      if(!_tab.router) {
+        this.$router.push(`/#${_tab.id}`);
+      } else {
+        this.$router.push(`/${_tab.id}`)
+      }
       // 分发 action
-      this.$store.dispatch("triggerTab", _tab);
+      this.$store.dispatch("triggerTab", _tab.id);
     },
     onScroll(e) {
+      let banner = document.getElementById('HomeBanner');
+      if(!banner) return;
       var scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      let title_bar_height = document
-        .getElementById("Home")
-        .offsetHeight;
-      this.black_bar = scrollTop > title_bar_height;
+      let banner_height = banner.offsetHeight;
+      let title_bar_height = document.getElementById("title-bar").offsetHeight;
+      this.black_bar = scrollTop + title_bar_height > banner_height;
     }
   },
   computed: {
@@ -86,18 +73,32 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+// title bar fade in down
+.fade-in-down-enter-active,
+.fade-in-down-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+.fade-in-down-enter {
+  transform: translateY(-100px);
+}
 .view-component__title-bar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
+  width: 100vw;
+  height: 100px;
+  transition: all 0.5s ease-in-out;
   &-black {
     background: rgba(0, 0, 0, 0.3);
+    height: 80px;
   }
   .view-component__inner {
-    height: 100px;
-    padding: 0 370px;
+    height: 100%;
+    width: 1180px;
+    margin: 0 auto;
+    // padding: 0 370px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,6 +108,9 @@ export default {
     .title-bar__logo {
       font-size: 48px;
       font-weight: bold;
+      width: 80px;
+      height: 53px;
+      font-family: fantasy;
     }
     .title-bar__tabs {
       &-item {

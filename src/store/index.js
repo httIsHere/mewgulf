@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   mutations: {
     triggerTab(state, payload) {
-      return state.cur_tab = payload.id
+      return state.cur_tab = payload
     }
   },
   actions: {
